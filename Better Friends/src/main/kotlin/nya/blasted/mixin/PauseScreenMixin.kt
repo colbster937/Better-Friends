@@ -56,7 +56,7 @@ abstract class PauseScreenMixin(title: Component) : Screen(title) {
             // Shift up buttons that were below the small buttons row to close the gap
             for (widget in widgets) {
                 if (isEssential(widget)) continue
-                if (!smallButtons.contains(widget) && widget.y > originalSmallRowY && widget.y < this.height - 50) {
+                if (!smallButtons.contains(widget) && widget.y > originalSmallRowY) {
                     widget.y -= 24
                 }
             }

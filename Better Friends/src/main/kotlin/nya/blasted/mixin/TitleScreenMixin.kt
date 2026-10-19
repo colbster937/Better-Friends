@@ -1,6 +1,7 @@
 package nya.blasted.mixin
 
 import net.minecraft.client.gui.components.AbstractWidget
+import net.minecraft.client.gui.components.PlainTextButton
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.client.gui.screens.TitleScreen
 import net.minecraft.network.chat.Component
@@ -56,7 +57,7 @@ abstract class TitleScreenMixin(title: Component) : Screen(title) {
             // Shift up any buttons that were below the small buttons row to fix any gap
             for (widget in widgets) {
                 if (isEssential(widget)) continue
-                if (!smallButtons.contains(widget) && widget.y > originalSmallRowY && widget.y < this.height - 50) {
+                if (widget !is PlainTextButton && !smallButtons.contains(widget) && widget.y > originalSmallRowY) {
                     widget.y -= 24
                 }
             }
