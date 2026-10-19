@@ -73,7 +73,7 @@ abstract class PauseScreenMixin(title: Component) : Screen(title) {
                 val minY = menuWidgets.minOf { it.y }
                 val maxY = menuWidgets.maxOf { it.y + it.height }
                 val totalMenuHeight = maxY - minY
-                val targetTopY = (this.height - totalMenuHeight) / 2
+                val targetTopY = (this.height - totalMenuHeight) / 2 - 48
                 val verticalShift = targetTopY - minY
 
                 for (widget in menuWidgets) {
